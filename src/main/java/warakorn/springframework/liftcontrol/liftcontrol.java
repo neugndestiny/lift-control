@@ -2,7 +2,7 @@ package warakorn.springframework.liftcontrol;
 
 public class liftcontrol {
     private int weight;
-    private int floor;
+    private String floor;
     private int maxWeight;
     private int maxFloor;
 
@@ -35,11 +35,35 @@ public class liftcontrol {
         this.weight = weight;
     }
 
-    public int getFloor() {
+    public String getFloor() {
         return floor;
     }
 
-    public void setFloor(int floor) {
+    public void setFloor(String floor) {
         this.floor = floor;
+    }
+
+    public String moveDirection(String current, String target) {
+        if (current.equals("G") && target.equals("TOP")) {
+            return "up";
+        } else if (current.equals("G") && target.equals("G+1")) {
+            return "up";
+        } else if (current.equals("G") && target.equals("TOP-1")) {
+            return "up";
+        } else if (current.equals("G+1") && target.equals("G")) {
+            return "down";
+        } else if (current.equals("G+1") && target.equals("TOP")) {
+            return "up";
+        } else if (current.equals("G+1") && target.equals("TOP-1")) {
+            return "up";
+        } else if (current.equals("TOP") && target.equals("G")) {
+            return "down";
+        } else if (current.equals("TOP") && target.equals("G+1")) {
+            return "down";
+        } else if (current.equals("TOP") && target.equals("TOP-1")) {
+            return "down";
+        } else {
+            return null;
+        }
     }
 }

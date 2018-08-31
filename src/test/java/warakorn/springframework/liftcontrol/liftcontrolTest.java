@@ -20,4 +20,11 @@ public class liftcontrolTest {
         }
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void moveFromGToTop() {
+        String expectedResult = "up";
+        String actualResult = liftcontrol.moveDirection("G","TOP");
+        assertEquals(expectedResult, actualResult);
+    }
 }
