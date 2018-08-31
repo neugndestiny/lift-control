@@ -34,4 +34,11 @@ public class liftcontrolTest {
         String actualResult = liftcontrol.moveDirection("G","G+1");
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void moveFromGToTopMinusOne() {
+        String expectedResult = "up";
+        String actualResult = liftcontrol.moveDirection("G","TOP-1");
+        assertEquals(expectedResult, actualResult);
+    }
 }
